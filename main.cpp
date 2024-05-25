@@ -22,9 +22,8 @@ bool Desecding(int x, int y)
 	return x < y;
 }
 
-// Time Complexity : n * n * 4
-// Space Complexity : n + 7;
-// Sequential Sort 
+// Time Complexity : n * n * 4 = O(n);
+// Space Complexity : n + 7 = O(n);
 void SequentialSort(int numbers[], int count, Comparison f)
 {
 	for (int i = 0; i < count - 1; ++i) // n - 1
@@ -41,21 +40,23 @@ void SequentialSort(int numbers[], int count, Comparison f)
 	}
 }
 
-void SelectiontialSort(int numbers[], int count)
+void SelectionSort(int numbers[], int count)
 {
 	int min{};
-
-	for (int i = 0; i < count; ++i) // n - 1
+	for (int i = 0; i < count - 1; ++i) 
 	{
-		for (int j = 0; j < count; ++j) //
+		for (int j = i + 1; j < count; ++j) 
 		{
-			if (numbers[i] < numbers[j])
+			if (numbers[i] > numbers[j])
 			{
-				min = i;
+				min = j;
 			}
 		}
-	}
 
+		int temp = numbers[min];
+		numbers[min] = numbers[i];
+		numbers[i] = temp;
+	}
 }
 
 int Add(int x, int y)
@@ -87,7 +88,7 @@ int main()
 	const int SIZE_ARRAY{ 10 };
 	int scores[SIZE_ARRAY]{ 20, 10, 40, 30, 70, 90, 80, 60, 50, 100 };
 
-	SequentialSort(scores, SIZE_ARRAY, Ascending);
+	SelectionSort(scores, SIZE_ARRAY);
 
 	PrintArray(scores, SIZE_ARRAY);
 }
