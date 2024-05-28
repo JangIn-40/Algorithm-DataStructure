@@ -44,12 +44,12 @@ void SequentialSort(int numbers[], int count, Comparison f)
 // Space Complexity :O(1)
 void SelectionSort(int numbers[], int count)
 {
-	int min{};
 	for (int i = 0; i < count - 1; ++i) 
 	{
+		int min{i};
 		for (int j = i + 1; j < count; ++j) 
 		{
-			if (numbers[i] > numbers[j])
+			if (numbers[min] > numbers[j])
 			{
 				min = j;
 			}
@@ -84,18 +84,20 @@ void BubleSort(int numbers[], int count)
 
 //Time Complexity : O(n^2)
 //Space Complexity : O(1)
-void InsertinoSort(int numbers[], int count)
+void InsertionSort(int numbers[], int count)
 {
 	for (int i = 1; i < count; ++i)
 	{
-		int j = i;
+		int j = i - 1;
 		int target = numbers[i];
 
-		while (--j >= 0 && target < numbers[j])
+		while (j >= 0 && target < numbers[j])
 		{
 			numbers[j + 1] = numbers[j];
-			numbers[j] = target;
+			--j;
 		}
+
+		numbers[j + 1] = target;
 	}
 }
 
@@ -107,6 +109,7 @@ void Merge(int numbers[], int start, int half, int end, int temp[])
 	int j = half + 1;
 	int tempIndex{};
 
+	//병합
 	while (i <= half && j <= end)
 	{
 		if (numbers[i] < numbers[j])
@@ -119,7 +122,7 @@ void Merge(int numbers[], int start, int half, int end, int temp[])
 		}
 	}
 
-	//남은것 복사
+	//배열에서 남아있는것 복사
 	while (i <= half)
 	{
 		temp[tempIndex++] = numbers[i++];
@@ -129,11 +132,10 @@ void Merge(int numbers[], int start, int half, int end, int temp[])
 		temp[tempIndex++] = numbers[j++];
 	}
 
-	//복사
-	tempIndex = 0;
-	for (int i = start; i <= end; ++i)
+	//병합된 결과 원본 배열에 복사
+	for (int k = 0; k <= tempIndex; ++k)
 	{
-		numbers[i] = temp[tempIndex++];
+		numbers[start + k] = temp[k];
 	}
 }
 
@@ -146,7 +148,8 @@ void MergeSort(int numbers[], int start, int end, int temp[])
 		return;
 	}
 
-	int half = (start + end) / 2;
+	//정수 오버플로우 방지
+	int half = start + (end - start) / 2;
 
 	MergeSort(numbers, start, half, temp);
 	MergeSort(numbers, half + 1, end, temp);
@@ -185,15 +188,12 @@ void QuickSort(int numbers[], int start, int end)
 	if (start < j)
 	{
 		QuickSort(numbers, start, j);
-		
 	}
 	
 	if (i < end)
 	{
 		QuickSort(numbers, i, end);
 	}
-	
-
 }
 
 void PrintArray(int numbers[], int count)
@@ -214,12 +214,12 @@ int main()
 	//SequentialSort(scores, SIZE_ARRAY, Ascending);
 	//SelectionSort(scores, SIZE_ARRAY);
 	//BubleSort(scores, SIZE_ARRAY);
-	//InsertinoSort(scores, SIZE_ARRAY);
+	//InsertionSort(scores, SIZE_ARRAY);
 
 	/*int temp[SIZE_ARRAY]{};
 	MergeSort(scores, 0, SIZE_ARRAY - 1, temp);*/
 
-	QuickSort(scores, 0, SIZE_ARRAY - 1);
+	//QuickSort(scores, 0, SIZE_ARRAY - 1);
 
 	PrintArray(scores, SIZE_ARRAY);
 	
