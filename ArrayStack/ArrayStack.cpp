@@ -13,8 +13,8 @@ struct Bullet
 };
 
 void Push(int stack[], int dataSize, int &top, int value);
-void Pop(int stack[], int dataSize, int &top);
-void PrintStack(int stack[], int dataSize, int &top);
+void Pop(int stack[], int &top);
+void PrintStack(int stack[], int top);
 
 int main()
 {
@@ -42,22 +42,21 @@ int main()
 			std::cin >> value;
 
 			Push(data, dataSize, top, value);
-			PrintStack(data, dataSize, top);
+			PrintStack(data, top);
 		}
 		else if (number == 2)
 		{
-			Pop(data, dataSize, top);
-			PrintStack(data, dataSize, top);
+			Pop(data, top);
+			PrintStack(data, top);
 		}
 	}
 
 	delete[] data;
-
 }
 
 void Push(int stack[], int dataSize, int &top, int value)
 {
-	if (top >= dataSize - 1)
+	if (top >= dataSize)
 	{
 		std::cout << "out of size" << std::endl;
 		return;
@@ -66,7 +65,7 @@ void Push(int stack[], int dataSize, int &top, int value)
 	stack[top++] = value;
 }
 
-void Pop(int stack[], int dataSize, int &top)
+void Pop(int stack[], int &top)
 {
 	if (top < 0)
 	{
@@ -77,7 +76,7 @@ void Pop(int stack[], int dataSize, int &top)
 	stack[top--];
 }
 
-void PrintStack(int stack[], int dataSize, int &top)
+void PrintStack(int stack[], int top)
 {
 	std::cout << "----Stack----" << std::endl;
 	for (int i = top - 1; i >= 0; --i)

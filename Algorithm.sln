@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorithm", "Algorithm&DataStructure.vcxproj", "{A67E92C3-C9E7-4646-806F-169E8A732F5A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataStructure", "DataStructure\DataStructure.vcxproj", "{5F65B1F6-804A-4ACA-B74D-9A611FE6FD39}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArrayQueue", "ArrayQueue\ArrayQueue.vcxproj", "{7B49F30D-22DA-4696-92EC-D4F420065FF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArrayStack", "ArrayStack\ArrayStack.vcxproj", "{5F65B1F6-804A-4ACA-B74D-9A611FE6FD39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,14 @@ Global
 		{A67E92C3-C9E7-4646-806F-169E8A732F5A}.Release|x64.Build.0 = Release|x64
 		{A67E92C3-C9E7-4646-806F-169E8A732F5A}.Release|x86.ActiveCfg = Release|Win32
 		{A67E92C3-C9E7-4646-806F-169E8A732F5A}.Release|x86.Build.0 = Release|Win32
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Debug|x64.ActiveCfg = Debug|x64
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Debug|x64.Build.0 = Debug|x64
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Debug|x86.Build.0 = Debug|Win32
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Release|x64.ActiveCfg = Release|x64
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Release|x64.Build.0 = Release|x64
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Release|x86.ActiveCfg = Release|Win32
+		{7B49F30D-22DA-4696-92EC-D4F420065FF2}.Release|x86.Build.0 = Release|Win32
 		{5F65B1F6-804A-4ACA-B74D-9A611FE6FD39}.Debug|x64.ActiveCfg = Debug|x64
 		{5F65B1F6-804A-4ACA-B74D-9A611FE6FD39}.Debug|x64.Build.0 = Debug|x64
 		{5F65B1F6-804A-4ACA-B74D-9A611FE6FD39}.Debug|x86.ActiveCfg = Debug|Win32
