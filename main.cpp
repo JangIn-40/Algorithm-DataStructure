@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm>
 
 // Big O Notation
 // 1. 곱하기 - 변수를 제외한 상수는 무시
@@ -139,7 +139,7 @@ void Merge(int numbers[], int start, int half, int end, int temp[])
 	}
 }
 
-// Time Complexity : O(nlogn)
+// Time Complexity : O(n log n)
 // Space Complexity : O(n)
 void MergeSort(int numbers[], int start, int end, int temp[])
 {
@@ -156,12 +156,15 @@ void MergeSort(int numbers[], int start, int end, int temp[])
 
 	Merge(numbers, start, half, end, temp);
 }
+
 //MergeSort의 단점(temp 메모리)를 보완하는 정도
+//Time Complexity : O(n log n)
+//Space Complexity : O(log n)
 void QuickSort(int numbers[], int start, int end)
 {
 	int i = start;
 	int j = end;
-	int pivot = numbers[(start + end) / 2];
+	int pivot = numbers[start + (end - start) / 2];
 
 	do
 	{
@@ -220,6 +223,8 @@ int main()
 	MergeSort(scores, 0, SIZE_ARRAY - 1, temp);*/
 
 	//QuickSort(scores, 0, SIZE_ARRAY - 1);
+
+	
 
 	PrintArray(scores, SIZE_ARRAY);
 	
