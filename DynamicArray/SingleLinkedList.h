@@ -98,8 +98,6 @@ void DeleteMonster(SingleLinkedList &list, const char *name)
 	Monster2 *m = list.pHead;
 	Monster2 *previous = nullptr;
 
-	list.size--;
-
 	while (m != nullptr)
 	{
 		if (!strcmp(m->name, name))
@@ -130,11 +128,12 @@ void DeleteMonster(SingleLinkedList &list, const char *name)
 		{
 			previous->pNext = m->pNext;
 		}
-
+		
+		list.size--;
 		delete m;
 	}
 
-	
+
 }
 
 void SingleLinekdListTest()

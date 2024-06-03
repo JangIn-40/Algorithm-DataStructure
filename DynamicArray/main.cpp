@@ -4,11 +4,13 @@
 #include <iostream>
 #include "DynamicArray.h"
 #include "SingleLinkedList.h"
+#include "DoubleLinkedList.h"
 
 int main()
 {
 	//DynamicArrayTest();
-	SingleLinekdListTest();
+	//SingleLinekdListTest(); //가급적이면 싱글리스트사용하는게 좋음
+	//DoubleLinkedTest();
 }
 
 
