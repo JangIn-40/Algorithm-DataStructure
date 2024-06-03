@@ -27,8 +27,6 @@ void CreateMonster(DoubleLinkedList &list, const char *name, int hp, int mp)
 	if (list.pTail == nullptr)
 	{
 		list.pHead = list.pTail = m;
-		m->pPrev = list.pTail;
-		list.pTail = m;
 	}
 	else
 	{
